@@ -54,4 +54,19 @@ class REQ01ManterLivroTests {
         Assertions.assertFalse(adicionado);
     }
 
+    @Test
+    void ct04_cadastrar_livro_com_titulo_em_branco() {
+        Biblioteca biblioteca = new Biblioteca();
+
+        Livro livro = new Livro();
+
+        livro.setAutor("Daniel");
+        livro.setTitulo("");
+        livro.setIsbn("1234");
+        boolean adicionado = biblioteca.adicionar(livro);
+
+        Assertions.assertFalse(adicionado);
+    }
+
+
 }

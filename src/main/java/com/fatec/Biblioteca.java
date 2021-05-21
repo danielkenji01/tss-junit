@@ -35,7 +35,9 @@ public class Biblioteca {
         if (StringUtils.isBlank(livro.getIsbn())) {
             return false;
         }
-
+        if(StringUtils.isBlank(livro.getTitulo())) {
+            return false;
+        }
         return true;
     }
 
