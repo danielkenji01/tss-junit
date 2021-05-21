@@ -19,6 +19,7 @@ class REQ01ManterLivroTests {
 
         Assertions.assertEquals(1, biblioteca.size());
     }
+
     @Test
     void ct02_cadastra_livro_com_isbn_ja_cadastrado() {
         Biblioteca biblioteca = new Biblioteca();
@@ -38,5 +39,19 @@ class REQ01ManterLivroTests {
         Assertions.assertFalse(adicionado);
     }
 
+    @Test
+    void ct03_cadastra_livro_com_isbn_em_branco() {
+        Biblioteca biblioteca = new Biblioteca();
+
+        Livro livro = new Livro();
+
+        livro.setAutor("Daniel");
+        livro.setTitulo("Aprenda inglês em 5 minutos");
+        livro.setIsbn("");
+
+        boolean adicionado = biblioteca.adicionar(livro);
+
+        Assertions.assertFalse(adicionado);
+    }
 
 }
