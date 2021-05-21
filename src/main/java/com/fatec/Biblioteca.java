@@ -32,13 +32,7 @@ public class Biblioteca {
             return false;
         }
 
-        if (StringUtils.isBlank(livro.getIsbn())) {
-            return false;
-        }
-        if(StringUtils.isBlank(livro.getTitulo())) {
-            return false;
-        }
-        return true;
+        return StringUtils.isNoneBlank(livro.getIsbn(), livro.getTitulo(), livro.getAutor());
     }
 
 }

@@ -67,6 +67,19 @@ class REQ01ManterLivroTests {
 
         Assertions.assertFalse(adicionado);
     }
+    @Test
+    void ct05_cadastrar_livro_com_autor_em_branco() {
+        Biblioteca biblioteca = new Biblioteca();
+
+        Livro livro = new Livro();
+
+        livro.setAutor("  ");
+        livro.setTitulo("Aprenda inglês em 5 minutos");
+        livro.setIsbn("1234");
+        boolean adicionado = biblioteca.adicionar(livro);
+
+        Assertions.assertFalse(adicionado);
+    }
 
 
 }
