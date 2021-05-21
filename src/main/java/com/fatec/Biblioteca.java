@@ -8,11 +8,11 @@ public class Biblioteca {
     private List<Livro> livros = new ArrayList<>();
 
     public void add(Livro livro) {
-
+        livros.add(livro);
     }
 
     public int size() {
-        return 1;
+        return livros.size();
     }
 
 }
