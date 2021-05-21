@@ -1,5 +1,7 @@
 package com.fatec;
 
+import java.util.Objects;
+
 public class Livro {
 
     private String isbn;
@@ -32,4 +34,16 @@ public class Livro {
         this.autor = autor;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Livro livro = (Livro) o;
+        return Objects.equals(isbn, livro.isbn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isbn);
+    }
 }

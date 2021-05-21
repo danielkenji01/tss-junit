@@ -15,9 +15,28 @@ class REQ01ManterLivroTests {
         livro.setTitulo("Aprenda inglês em 5 minutos");
         livro.setIsbn("1234");
 
-        biblioteca.add(livro);
+        biblioteca.adicionar(livro);
 
         Assertions.assertEquals(1, biblioteca.size());
     }
+    @Test
+    void ct02_cadastra_livro_com_isbn_ja_cadastrado() {
+        Biblioteca biblioteca = new Biblioteca();
+
+        Livro livro = new Livro();
+
+        livro.setAutor("Daniel");
+        livro.setTitulo("Aprenda inglês em 5 minutos");
+        livro.setIsbn("1234");
+
+        biblioteca.adicionar(livro);
+        Livro livro2 = new Livro();
+        livro2.setAutor("Tanembaum");
+        livro2.setTitulo("Redes de Computadores");
+        livro2.setIsbn("1234");
+        final boolean adicionado = biblioteca.adicionar(livro2);
+        Assertions.assertFalse(adicionado);
+    }
+
 
 }

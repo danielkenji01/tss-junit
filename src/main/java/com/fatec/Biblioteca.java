@@ -7,8 +7,11 @@ public class Biblioteca {
 
     private List<Livro> livros = new ArrayList<>();
 
-    public void add(Livro livro) {
-        livros.add(livro);
+    public boolean adicionar(Livro livro) {
+        if(livros.contains(livro)){
+            return false;
+        }
+        return livros.add(livro);
     }
 
     public int size() {
